@@ -24,12 +24,11 @@ embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-b
 vectorstore = FAISS.load_local("budget_faiss", embeddings, allow_dangerous_deserialization=True)
 retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
 
-# RAG LLM (The one used in our app)
-rag_llm = ChatOpenAI(model="gpt-5-nano", api_key=api_key, temperature=0)
+# RAG LLM 
+rag_llm = ChatOpenAI(model="gpt-4o-mini", api_key=api_key, temperature=0)
 
-# EVALUATOR LLM (The one used by Ragas to judge)
-# We set temperature to 1 because your API endpoint is rejecting 0.01
-evaluator_llm = ChatOpenAI(model="gpt-5-nano", api_key=api_key, temperature=1)
+# EVALUATOR LLM 
+evaluator_llm = ChatOpenAI(model="gpt-4o-mini", api_key=api_key, temperature=0)
 
 prompt = ChatPromptTemplate.from_template(
     "Context: {context} \n History: {chat_history} \n Question: {input} \n Answer:"

@@ -87,8 +87,8 @@ retriever, whisper = load_local_models()
 
 def get_rag_components():
     if not api_key: return None, None
-    # Using the model specified in your request
-    llm = ChatOpenAI(model="gpt-5-nano", api_key=api_key, temperature=0)
+    # Using gpt-4o-mini or gpt-5-nano for the RAG LLM to balance performance and cost
+    llm = ChatOpenAI(model="gpt-4o-mini", api_key=api_key, temperature=0)
     
     prompt = ChatPromptTemplate.from_template(
         """
