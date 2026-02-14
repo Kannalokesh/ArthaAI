@@ -6,7 +6,8 @@ An advanced RAG (Retrieval-Augmented Generation) application to chat with the Un
 - **Voice & Text:** Chat via typing or speaking (powered by Faster-Whisper & gTTS).
 - **High Precision RAG:** Uses a 2-stage retrieval (FAISS + Voyage AI Reranker).
 - **Smart Filtering:** Automatically ignores Table of Contents for factual queries to improve accuracy.
-- **Evaluation:** Verified using RAGAS framework ( **91% Context Precision, 100% Context Recall, 92.50% Faithfullness, 87.91% Answer Relevancy **).
+- **Evaluation:** Verified using RAGAS framework ( 91% Context Precision, 100% Context Recall, 92.50% Faithfullness, 87.91% Answer Relevancy ).
+
 
 ## 🛠️ Setup Instructions
 
@@ -16,6 +17,7 @@ An advanced RAG (Retrieval-Augmented Generation) application to chat with the Un
    cd Budget-AI
 2. **Set up Environment variables**
     ```bash
+    create .env file
     OPENAI_API_KEY=your_openai_api_key
     VOYAGE_API_KEY=your_voyage_api_key
 3. **Install requirements**
@@ -27,7 +29,7 @@ An advanced RAG (Retrieval-Augmented Generation) application to chat with the Un
 5. **Run the app**
     ```bash
     streamlit run app.py
-** Evaluating using RAGAS Framework**
+Evaluating using RAGAS Framework
 1. **RAGAS evaluation**
     ```bash
     python evaluate_rag.py
